@@ -4,9 +4,6 @@ variable "aws_region" {
 variable "app_version" {
 }
 
-variable "app_color" {
-}
-
 variable "aws_ec2_keypair_name" {
 }
 
