@@ -1,11 +1,3 @@
-resource "null_resource" "test-setting-variables" {
-    provisioner "local-exec" {
-        command = "echo ${var.aws_key} : ${var.aws_sec}"
-    }
-}
-
-
-
 data "aws_ami" "repave_images" {
   #most_recent = true
   #filter {
@@ -26,7 +18,6 @@ data "aws_ami" "repave_images" {
 }
 
 resource "aws_launch_configuration" "hatest" {
-  #name_prefix     = "hatest-${var.app_color}-" 
   name_prefix     = "hatest-" 
   image_id        = data.aws_ami.repave_images.id
   instance_type   = var.inst_type
@@ -42,7 +33,6 @@ resource "aws_launch_configuration" "hatest" {
  
   ebs_block_device {
       device_name           = var.inst_device_name
-      #snapshot_id           = var.aws_ebs_snap_id
       snapshot_id           = var.aws_ebs_snap_id == "" ? "" : var.aws_ebs_snap_id
       volume_type           = var.aws_ebs_volume_type == "" ? "gp2" : var.aws_ebs_volume_type
       volume_size           = var.aws_ebs_volume_size == "" ? "10" : var.aws_ebs_volume_size
