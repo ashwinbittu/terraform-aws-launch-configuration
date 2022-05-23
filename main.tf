@@ -10,11 +10,17 @@ data "aws_ami" "repave_images" {
   #}
   #owners = ["099720109477"] # Canonical
     
+  #filter {
+  #  name   = "name"
+  #  values = ["repave-ami-${var.app_version}.0"]
+  #}
+  #owners = ["109769995951"] # Canonical
+  
   filter {
     name   = "name"
-    values = ["repave-ami-${var.app_version}.0"]
+    values = ["centtestami"]
   }
-  owners = ["109769995951"] # Canonical
+  owners = ["043042377913"] # Canonical  
 }
 
 resource "aws_launch_configuration" "hatest" {
