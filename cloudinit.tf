@@ -2,6 +2,7 @@ data "template_cloudinit_config" "cloudinit-vol" {
   gzip          = false
   base64_encode = false
 
+  /*
   part {
     filename     = "user_data.sh"
     content_type = "text/x-shellscript"
@@ -14,7 +15,7 @@ data "template_cloudinit_config" "cloudinit-vol" {
             })
   }
 
-/*  part {
+  part {
     filename     = "init.cfg"    
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/scripts/init.cfg", { 
