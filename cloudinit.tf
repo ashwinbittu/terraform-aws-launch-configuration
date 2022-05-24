@@ -1,8 +1,8 @@
-data "template_cloudinit_config" "cloudinit-vol" {
+/*data "template_cloudinit_config" "cloudinit-vol" {
   gzip          = false
   base64_encode = false
 
-  /*
+  
   part {
     filename     = "user_data.sh"
     content_type = "text/x-shellscript"
@@ -21,5 +21,6 @@ data "template_cloudinit_config" "cloudinit-vol" {
     content = templatefile("${path.module}/scripts/init.cfg", { 
               REGION = var.aws_region
             })
-  }*/
+  }
 }
+*/
