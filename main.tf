@@ -29,7 +29,7 @@ resource "aws_launch_configuration" "hatest" {
   instance_type   = var.inst_type
   key_name        = var.aws_ec2_keypair_name
   security_groups = var.aws_security_group_instances_id 
-  user_data = data.template_cloudinit_config.cloudinit-vol.rendered
+  #user_data = data.template_cloudinit_config.cloudinit-vol.rendered
 
   root_block_device {
       volume_size           = "10"
