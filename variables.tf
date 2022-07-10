@@ -1,6 +1,3 @@
-#variable "aws_region" {
-#}
-
 variable "app_version" {
 }
 
@@ -28,8 +25,5 @@ variable "aws_security_group_instances_id" {
 variable "repave_strategy" {
 }
 
-#variable "aws_key" {
-#}
-
-#variable "aws_sec" {
-#}
+variable "ami_owners" {
+}
